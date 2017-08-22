@@ -38,7 +38,7 @@ const Typis = {
     is: (object, type) => {
         if(typeof type !== 'string')
             throw new Error('type must be a string');
-        return Typis.get(object).toLowerCase() === type.toLocaleLowerCase();
+        return Typis.get(object).toLowerCase() === type.toLowerCase();
     }
 };
 
