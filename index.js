@@ -47,6 +47,12 @@ const Typis = {
      * @param type {string} type string can be also lowercase
      * @param [msg] {string} message error
      * @returns {boolean}
+     * @example
+     * try {
+     *      typis.throw('hello', 'number');
+     * } catch(e) {
+     *      console.log(e);
+     * }
      */
     throw: (object, type, msg = '') => {
         if (!Typis.is(object, type)) {
