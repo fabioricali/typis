@@ -24,7 +24,7 @@ const Typis = {
      */
     get: (object) => {
         let toString = Typis._toString(object);
-        return toString.slice(8,toString.length -1);
+        return toString.slice(8, toString.length - 1);
     },
 
     /**
@@ -36,9 +36,23 @@ const Typis = {
      * typis.is('hello', 'number'); //=> false
      */
     is: (object, type) => {
-        if(typeof type !== 'string')
+        if (typeof type !== 'string')
             throw new Error('type must be a string');
         return Typis.get(object).toLowerCase() === type.toLowerCase();
+    },
+
+    /**
+     * Check object type and throw an error if not satisfied
+     * @param object
+     * @param type
+     * @param msg
+     * @returns {boolean}
+     */
+    throw: (object, type, msg = '') => {
+        if (!Typis.is(object, type)) {
+            throw new Error(msg || 'object type mismatch, must be a ' + type);
+        }
+        return true;
     }
 };
 

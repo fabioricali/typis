@@ -28,8 +28,33 @@ describe('typis', function () {
         it('should be return error', function (done) {
             try {
                 typis.is('Hello');
-            } catch(e) {
+            } catch (e) {
                 console.log(e.message);
+                done();
+            }
+        });
+    });
+    describe('throw', function () {
+        it('should be return true', function () {
+            const result = typis.throw(true, 'boolean');
+            console.log(result);
+            be.err.true(result);
+        });
+        it('should be return error', function (done) {
+            try {
+                typis.throw('Hello', 'number');
+            } catch (e) {
+                console.log(e.message);
+                be.err.equal(e.message, 'object type mismatch, must be a number');
+                done();
+            }
+        });
+        it('custom msg, should be return error', function (done) {
+            try {
+                typis.throw('Hello', 'number', 'ops, type must be a number');
+            } catch (e) {
+                console.log(e.message);
+                be.err.equal(e.message, 'ops, type must be a number');
                 done();
             }
         });

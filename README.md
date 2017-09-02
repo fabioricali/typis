@@ -18,13 +18,16 @@ npm install typis --save
 ## Example
 
 ```javascript
-const typis = require('typis');
+const type = require('typis');
 
-console.log(typis.get([])); //=> Array;
-console.log(typis.get(123)); //=> Number;
-console.log(typis.get(true)); //=> Boolean;
+console.log(type.get([])); //=> Array;
+console.log(type.get(123)); //=> Number;
+console.log(type.get(true)); //=> Boolean;
 
-console.log(typis.is(123, 'boolean')); //=> false;
+console.log(type.is(123, 'boolean')); //=> false;
+
+// Throw an error
+type.throw(123, 'boolean'); //=> error;
 ```
 
 ## API
