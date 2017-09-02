@@ -28,6 +28,7 @@ console.log(type.is(123, 'boolean')); //=> false;
 
 // Throw an error
 type.throw(123, 'boolean'); //=> error;
+type.throw(123, 'boolean', 'your custom message error'); //=> error;
 ```
 
 ## API

@@ -43,9 +43,9 @@ const Typis = {
 
     /**
      * Check object type and throw an error if not satisfied
-     * @param object
-     * @param type
-     * @param msg
+     * @param object {Object} object
+     * @param type {string} type string can be also lowercase
+     * @param [msg] {string} message error
      * @returns {boolean}
      */
     throw: (object, type, msg = '') => {
