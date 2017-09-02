@@ -82,3 +82,7 @@ Check object type and throw an error if not satisfied
     </tr>  </tbody>
 </table>
 
+**Example**  
+```js
+try {     typis.throw('hello', 'number');} catch(e) {     console.log(e);}
+```
