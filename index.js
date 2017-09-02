@@ -1,6 +1,6 @@
 /**
  * @global
- * @type {{_toString: (function(*=)), get: (function(Object)), is: (function(Object, string))}}
+ * @type {{_toString: (function(*=)), get: (function(Object)), is: (function(Object, string)), throw: (function(Object, string, *=))}}
  */
 const Typis = {
 
